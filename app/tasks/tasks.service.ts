@@ -5,11 +5,11 @@ import {
   getAllTasksFromDB,
   getTaskFromDB,
   updateTaskInDB,
-} from './repository'
+} from './tasks.repository'
 
-import { AddTaskDTO, Task, TaskEntity, UpdateTaskDTO } from './model'
+import { AddTaskDTO, Task, TaskEntity, UpdateTaskDTO } from '../model'
 
-const generateTask = (taskEntity: TaskEntity): Task => {
+export const generateTask = (taskEntity: TaskEntity): Task => {
   const baseUrl = 'http://localhost:3000/'
   return { ...taskEntity, url: baseUrl + taskEntity.id }
 }

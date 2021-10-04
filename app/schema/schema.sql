@@ -17,6 +17,9 @@ updated_at timestamptz default current_timestamp
 
 create table task_tasklist
 (
-task_id int references task (id),
-tasklist_id int references tasklist(id)
+task_id int not null,
+tasklist_id int not null,
+primary key(task_id, tasklist_id),
+foreign key(task_id) references task (id) on delete cascade,
+foreign key(tasklist_id) references tasklist(id) on delete cascade
 );

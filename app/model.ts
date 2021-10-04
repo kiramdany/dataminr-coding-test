@@ -6,7 +6,7 @@ export type TaskEntity = {
   description: string
   completed: boolean
   updated_at: Timestamp
-  order: number
+  order: number | null
 }
 
 export type Task = TaskEntity & {
@@ -24,4 +24,27 @@ export type UpdateTaskDTO = {
   description?: string
   order?: number
   completed?: boolean
+}
+
+export type TasklistEntity = {
+  id: number
+  title: string
+}
+
+export type Tasklist = {
+  id: number
+  title: string
+  tasks: Task[]
+}
+
+export type AddTasklistDTO = {
+  title: string
+}
+export type AddTaskToTasklistDTO = {
+  tasklistId: number
+  taskId: number
+}
+export type RemoveTaskInTasklistDTO = {
+  tasklistId: number
+  taskId: number
 }

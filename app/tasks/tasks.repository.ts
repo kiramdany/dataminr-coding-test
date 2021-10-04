@@ -1,5 +1,5 @@
 import { Pool } from 'pg'
-import { AddTaskDTO, TaskEntity, UpdateTaskDTO } from './model'
+import { AddTaskDTO, TaskEntity, UpdateTaskDTO } from '../model'
 
 const pool = new Pool()
 
